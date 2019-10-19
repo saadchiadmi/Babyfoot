@@ -32,7 +32,7 @@ filterplayer(query, players: Player[]):Player[] {
     for(let i = 0; i < players.length; i++) {
         let player = players[i];
         if(player.pseudo.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-            filtered.push({pseudo : player.pseudo});
+            filtered.push(player);
         }
     }
     return filtered;

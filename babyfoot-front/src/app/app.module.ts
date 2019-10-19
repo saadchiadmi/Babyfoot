@@ -18,6 +18,8 @@ import { TournamentComponent } from './tournament/tournament.component';
 import { PlayersComponent } from './players/players.component';
 import { CreateTournamentComponent } from './create-tournament/create-tournament.component';
 import {AutoCompleteModule} from 'primeng/autocomplete';
+import {DataViewModule} from 'primeng/dataview';
+import {DropdownModule, PanelModule, DialogModule, InputTextModule, ButtonModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,14 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
     CreateTournamentComponent,
   ],
   imports: [
+    ButtonModule,
+    InputTextModule,
+    DialogModule,
+    PanelModule,
+    DropdownModule,
     FormsModule,
     BrowserModule,
+    DataViewModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SidebarModule.forRoot(),
