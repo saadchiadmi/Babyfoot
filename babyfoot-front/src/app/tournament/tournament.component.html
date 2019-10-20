@@ -1,1 +1,33 @@
-<p>tournament works!</p>
+<p-dataView #dv [value]="tournaments" [paginator]="true" [rows]="5" paginatorPosition="both" filterBy="pseudo1"
+[sortField]="sortField" [sortOrder]="sortOrder">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-4">
+                    <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)" [style]="{'min-width':'140px'}"></p-dropdown>
+                </div>
+                <div class="ui-g-6 ui-md-4 filter-container">
+                    <div style="position:relative">
+                        <input type="search" pInputText placeholder="Search by pseudo" (keyup)="dv.filter($event.target.value)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p-header>
+    <ng-template let-tournament pTemplate="listItem">
+        <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+            <div class="ui-g-12 ui-md-8 tournament-details">
+                <div class="ui-g">
+                    <div class="ui-g-2 ui-sm-6">Date: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{tournament.date.getDate()}}-{{tournament.date.getMonth()}}-{{tournament.date.getFullYear()}}</b></div>
+
+                    <div class="ui-g-2 ui-sm-6">Player 1: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{tournament.pseudo1}}</b></div>
+
+                    <div class="ui-g-2 ui-sm-6">Player 2: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{tournament.pseudo2}}</b></div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>

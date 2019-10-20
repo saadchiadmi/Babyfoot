@@ -12,17 +12,11 @@ import { PlayerService } from '../service/player.service';
 export class PlayersComponent implements OnInit {
 
   players: Player[];
-
   selectedPlayer: Player;
-
   displayDialog: boolean;
-
   sortOptions: SelectItem[];
-
   sortKey: string;
-
   sortField: string;
-
   sortOrder: number;
 
   constructor(private playerservice: PlayerService) { }
